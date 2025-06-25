@@ -16,7 +16,7 @@
         }
         iframe {
             width: 100%;
-            height: calc(100% - 60px); /* Ajusta a altura para acomodar os botões */
+            height: calc(100% - 60px);
             border: none;
         }
         .button-container {
@@ -26,25 +26,58 @@
             padding: 10px;
             background-color: #f0f0f0;
         }
-        .button-container a {
+        .button-container button, .button-container a {
             padding: 10px 20px;
-            background-color: #007bff;
             color: white;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
             font-family: Arial, sans-serif;
             font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .button-container a:hover {
-            background-color: #0056b3;
+        .button-container button:hover, .button-container a:hover {
+            filter: brightness(85%);
+        }
+        .acertos-btn {
+            background-color: #004085;
+        }
+        .aguia-btn {
+            background-color: #4A7043;
+        }
+        .tigers-btn {
+            background: linear-gradient(90deg, #FF6200, #000000);
+        }
+        .suporte-btn {
+            background-color: #25D366;
+        }
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo do Iframe"></iframe>
+    <iframe id="contentFrame" src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo do Iframe"></iframe>
     <div class="button-container">
-        <a href="https://app.aguiaoficial.com/pr/XG04WTry" target="_blank">Aguia Oficial</a>
-        <a href="https://app.tigersclub.vip/pr/k58hQ1An" target="_blank">Tigers Club</a>
+        <button class="acertos-btn" onclick="changeIframe('https://app.acertos.club/pr/T5Sf26JH')">Acertos Club</button>
+        <button class="aguia-btn" onclick="changeIframe('https://app.aguiaoficial.com/pr/XG04WTry')">Aguia Oficial</button>
+        <button class="tigers-btn" onclick="changeIframe('https://app.tigersclub.vip/pr/k58hQ1An')">Tigers Club</button>
+        <a class="suporte-btn" href="https://wa.me/5583994121109" target="_blank">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.99.58 3.85 1.58 5.44L2 22l4.56-1.58A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.79 15.29c-.45 1.24-1.57 2.24-2.82 2.49-.38.08-.77.12-1.16.12-1.75 0-3.33-.67-4.54-1.77l-.32-.31-2.71.94.94-2.71-.31-.32A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.56-.45 3.02-1.23 4.29zm-2.06-4.81l-.53-.79c-.13-.19-.33-.32-.54-.32h-.45c-.36 0-.69.18-.87.51l-.45.79c-.18.32-.51.51-.87.51-.15 0-.3-.03-.44-.09-.51-.21-1.05-.66-1.56-1.2-.51-.54-.96-1.14-1.29-1.83-.18-.36-.18-.78 0-1.14l.36-.63c.18-.33.15-.72-.06-1.02l-.78-1.02c-.21-.27-.54-.36-.84-.24l-.69.24c-.3.12-.51.39-.57.69-.15.75.03 1.56.45 2.25.69 1.14 1.62 2.13 2.76 2.85 1.14.72 2.37 1.14 3.66 1.14.45 0 .9-.06 1.32-.18.36-.12.66-.36.78-.72l.24-.69c.12-.3.03-.63-.24-.84z"/>
+            </svg>
+            Suporte
+        </a>
     </div>
+    <script>
+        function changeIframe(url) {
+            document.getElementById('contentFrame').src = url;
+        }
+    </script>
 </body>
 </html>
