@@ -3,25 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site com Iframe</title>
+    <title>Site com Iframe e Botões</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
             overflow: hidden;
         }
         iframe {
             width: 100%;
-            height: 100%;
+            height: calc(100% - 60px); /* Ajusta a altura para acomodar os botões */
             border: none;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .button-container a {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+        .button-container a:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <iframe src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo do Iframe"></iframe>
+    <div class="button-container">
+        <a href="https://app.aguiaoficial.com/pr/XG04WTry" target="_blank">Aguia Oficial</a>
+        <a href="https://app.tigersclub.vip/pr/k58hQ1An" target="_blank">Tigers Club</a>
+    </div>
 </body>
 </html>
