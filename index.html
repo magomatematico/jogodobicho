@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Site com Iframe e Botões</title>
+    <title>Site com Iframe e Rodapé</title>
     <style>
         body {
             margin: 0;
@@ -45,11 +45,11 @@
         }
         iframe {
             width: 100%;
-            height: calc(100% - 90px);
+            height: calc(100% - 90px); /* Adjusted for message bar and footer */
             border: none;
             flex-grow: 1;
         }
-        .button-container {
+        footer {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -58,7 +58,7 @@
             background-color: #004085;
             transition: background-color 0.3s ease;
         }
-        .button-container button, .button-container a {
+        footer button, footer a {
             padding: 6px 10px;
             color: white;
             border: none;
@@ -72,9 +72,9 @@
             gap: 4px;
             white-space: nowrap;
             flex: 1 0 auto;
-            min-width: 80px; /* Ensure buttons are compact but visible */
+            min-width: 80px;
         }
-        .button-container button:hover, .button-container a:hover {
+        footer button:hover, footer a:hover {
             filter: brightness(85%);
         }
         .acertos-btn {
@@ -104,14 +104,14 @@
                 font-size: 12px;
                 right: 5px;
             }
-            .button-container {
+            footer {
                 gap: 3px;
                 padding: 5px;
             }
-            .button-container button, .button-container a {
+            footer button, footer a {
                 padding: 4px 6px;
                 font-size: 9px;
-                min-width: 60px; /* Smaller min-width for smartphones */
+                min-width: 60px;
             }
             .whatsapp-icon {
                 width: 10px;
@@ -129,7 +129,7 @@
         <button class="close-btn" onclick="document.getElementById('messageBar').style.display='none'; document.getElementById('contentFrame').style.height='calc(100% - 45px)'">×</button>
     </div>
     <iframe id="contentFrame" src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo do Iframe"></iframe>
-    <div id="buttonContainer" class="button-container">
+    <footer id="buttonContainer">
         <button class="acertos-btn" onclick="changeIframe('https://app.acertos.club/pr/T5Sf26JH', '#004085')">Acertos Club</button>
         <button class="aguia-btn" onclick="changeIframe('https://app.aguiaoficial.com/pr/XG04WTry', '#4A7043')">Aguia Oficial</button>
         <button class="tigers-btn" onclick="changeIframe('https://app.tigersclub.vip/pr/k58hQ1An', '#FF6200')">Tigers Club</button>
@@ -139,7 +139,7 @@
             </svg>
             Suporte
         </a>
-    </div>
+    </footer>
     <script>
         function changeIframe(url, color) {
             console.log('Changing iframe to: ' + url);
