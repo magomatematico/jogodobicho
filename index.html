@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensure compatibility with older browsers -->
     <title>Site com Iframe e Botões</title>
     <style>
         body {
@@ -44,7 +45,7 @@
         }
         iframe {
             width: 100%;
-            height: calc(100% - 90px); /* Adjusted for message bar and button container */
+            height: calc(100% - 90px);
             border: none;
             flex-grow: 1;
         }
@@ -73,7 +74,7 @@
             gap: 4px;
             transition: filter 0.2s;
             white-space: nowrap;
-            min-width: fit-content; /* Ensure buttons don't shrink too much */
+            min-width: fit-content;
         }
         .button-container button:hover, .button-container a:hover {
             filter: brightness(85%);
@@ -118,7 +119,7 @@
                 height: 12px;
             }
             iframe {
-                height: calc(100% - 70px); /* Adjusted for smaller elements */
+                height: calc(100% - 70px);
             }
         }
     </style>
@@ -135,17 +136,19 @@
         <button class="tigers-btn" onclick="changeIframe('https://app.tigersclub.vip/pr/k58hQ1An', '#FF6200')">Tigers Club</button>
         <a class="suporte-btn" href="https://wa.me/5583994121109" target="_blank" onclick="changeContainerColor('#25D366')">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path fill="white" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.134.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669 hé.719-.911-.99-.242-.271-.416-.471-.642-.471H7.5c-.223 0-.47.074-.669.223-.297.223-1.115.891-1.115 2.176 0 1.285.966 2.529 1.1 2.678.133.148 1.874 2.863 4.55 4.014 1.58.682 2.822.892 3.789.892.975 0 1.774-.446 2.23-.743.446-.297.743-.669.892-.967.149-.297.297-.595.223-.744-.074-.148-.322-.223-.595-.297zm-5.487-13c-5.522 0-10 4.477-10 10 0 2.136.671 4.116 1.81 5.74L2 22l5.26-1.794c1.623 1.139 3.604 1.794 5.74 1.794 5.522 0 10-4.477 10-10s-4.478-10-10-10zm0 18c-1.943 0-3.762-.586-5.29-1.597l-.379-.253-3.112 1.06 1.06-3.112-.253-.379c-1.01-1.528-1.597-3.347-1.597-5.29 0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
+                <path fill="white" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.134.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-.719-.911-.99-.242-.271-.416-.471-.642-.471H7.5c-.223 0-.47.074-.669.223-.297.223-1.115.891-1.115 2.176 0 1.285.966 2.529 1.1 2.678.133.148 1.874 2.863 4.55 4.014 1.58.682 2.822.892 3.789.892.975 0 1.774-.446 2.23-.743.446-.297.743-.669.892-.967.149-.297.297-.595.223-.744-.074-.148-.322-.223-.595-.297zm-5.487-13c-5.522 0-10 4.477-10 10 0 2.136.671 4.116 1.81 5.74L2 22l5.26-1.794c1.623 1.139 3.604 1.794 5.74 1.794 5.522 0 10-4.477 10-10s-4.478-10-10-10zm0 18c-1.943 0-3.762-.586-5.29-1.597l-.379-.253-3.112 1.06 1.06-3.112-.253-.379c-1.01-1.528-1.597-3.347-1.597-5.29 0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
             </svg>
             Suporte
         </a>
     </div>
     <script>
         function changeIframe(url, color) {
+            console.log('Changing iframe to: ' + url); // Debug log
             document.getElementById('contentFrame').src = url;
             document.getElementById('buttonContainer').style.backgroundColor = color;
         }
         function changeContainerColor(color) {
+            console.log('Changing container color to: ' + color); // Debug log
             document.getElementById('buttonContainer').style.backgroundColor = color;
         }
     </script>
