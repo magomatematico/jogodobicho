@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensure compatibility with older browsers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Site com Iframe e Botões</title>
     <style>
         body {
@@ -53,15 +53,13 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 4px;
             padding: 8px;
             background-color: #004085;
             transition: background-color 0.3s ease;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
         }
         .button-container button, .button-container a {
-            padding: 6px 12px;
+            padding: 6px 10px;
             color: white;
             border: none;
             border-radius: 4px;
@@ -72,9 +70,9 @@
             display: flex;
             align-items: center;
             gap: 4px;
-            transition: filter 0.2s;
             white-space: nowrap;
-            min-width: fit-content;
+            flex: 1 0 auto;
+            min-width: 80px; /* Ensure buttons are compact but visible */
         }
         .button-container button:hover, .button-container a:hover {
             filter: brightness(85%);
@@ -99,27 +97,28 @@
         /* Responsive adjustments for smartphones */
         @media (max-width: 600px) {
             .message-bar {
-                font-size: 11px;
-                padding: 6px;
+                font-size: 10px;
+                padding: 5px;
             }
             .close-btn {
-                font-size: 14px;
-                right: 6px;
+                font-size: 12px;
+                right: 5px;
             }
             .button-container {
-                gap: 4px;
-                padding: 6px;
+                gap: 3px;
+                padding: 5px;
             }
             .button-container button, .button-container a {
-                padding: 4px 8px;
-                font-size: 10px;
+                padding: 4px 6px;
+                font-size: 9px;
+                min-width: 60px; /* Smaller min-width for smartphones */
             }
             .whatsapp-icon {
-                width: 12px;
-                height: 12px;
+                width: 10px;
+                height: 10px;
             }
             iframe {
-                height: calc(100% - 70px);
+                height: calc(100% - 65px); /* Adjusted for smaller elements */
             }
         }
     </style>
@@ -127,7 +126,7 @@
 <body>
     <div id="messageBar" class="message-bar">
         <span>Torne-se um promotor clicando <a href="https://www.damadasorte.com.br" target="_blank">aqui</a></span>
-        <button class="close-btn" onclick="document.getElementById('messageBar').style.display='none'; document.getElementById('contentFrame').style.height='calc(100% - 50px)'">×</button>
+        <button class="close-btn" onclick="document.getElementById('messageBar').style.display='none'; document.getElementById('contentFrame').style.height='calc(100% - 45px)'">×</button>
     </div>
     <iframe id="contentFrame" src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo do Iframe"></iframe>
     <div id="buttonContainer" class="button-container">
@@ -143,12 +142,12 @@
     </div>
     <script>
         function changeIframe(url, color) {
-            console.log('Changing iframe to: ' + url); // Debug log
+            console.log('Changing iframe to: ' + url);
             document.getElementById('contentFrame').src = url;
             document.getElementById('buttonContainer').style.backgroundColor = color;
         }
         function changeContainerColor(color) {
-            console.log('Changing container color to: ' + color); // Debug log
+            console.log('Changing container color to: ' + color);
             document.getElementById('buttonContainer').style.backgroundColor = color;
         }
     </script>
