@@ -20,10 +20,10 @@
             align-items: center;
             background-color: #333;
             color: white;
-            padding: 10px;
+            padding: 8px;
             position: relative;
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
         }
         .message-bar a {
             color: #25D366;
@@ -35,43 +35,45 @@
         }
         .close-btn {
             position: absolute;
-            right: 10px;
+            right: 8px;
             background: none;
             border: none;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
         }
         iframe {
             width: 100%;
-            height: calc(100% - 100px);
+            height: calc(100% - 90px); /* Adjusted for message bar and button container */
             border: none;
             flex-grow: 1;
         }
         .button-container {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allow buttons to wrap on small screens */
-            gap: 10px;
-            padding: 10px;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 8px;
             background-color: #004085;
             transition: background-color 0.3s ease;
-            overflow-x: auto; /* Enable horizontal scrolling if needed */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .button-container button, .button-container a {
-            padding: 8px 16px;
+            padding: 6px 12px;
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 14px;
+            border-radius: 4px;
+            font-size: 12px;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             transition: filter 0.2s;
-            white-space: nowrap; /* Prevent button text from wrapping */
+            white-space: nowrap;
+            min-width: fit-content; /* Ensure buttons don't shrink too much */
         }
         .button-container button:hover, .button-container a:hover {
             filter: brightness(85%);
@@ -89,14 +91,14 @@
             background-color: #25D366;
         }
         .whatsapp-icon {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             fill: white;
         }
         /* Responsive adjustments for smartphones */
         @media (max-width: 600px) {
             .message-bar {
-                font-size: 12px;
+                font-size: 11px;
                 padding: 6px;
             }
             .close-btn {
@@ -104,21 +106,19 @@
                 right: 6px;
             }
             .button-container {
-                gap: 6px;
+                gap: 4px;
                 padding: 6px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
             }
             .button-container button, .button-container a {
-                padding: 5px 10px;
-                font-size: 11px;
+                padding: 4px 8px;
+                font-size: 10px;
             }
             .whatsapp-icon {
-                width: 14px;
-                height: 14px;
+                width: 12px;
+                height: 12px;
             }
             iframe {
-                height: calc(100% - 80px); /* Adjusted for smaller message bar and button container */
+                height: calc(100% - 70px); /* Adjusted for smaller elements */
             }
         }
     </style>
@@ -126,7 +126,7 @@
 <body>
     <div id="messageBar" class="message-bar">
         <span>Torne-se um promotor clicando <a href="https://www.damadasorte.com.br" target="_blank">aqui</a></span>
-        <button class="close-btn" onclick="document.getElementById('messageBar').style.display='none'; document.getElementById('contentFrame').style.height='calc(100% - 60px)'">×</button>
+        <button class="close-btn" onclick="document.getElementById('messageBar').style.display='none'; document.getElementById('contentFrame').style.height='calc(100% - 50px)'">×</button>
     </div>
     <iframe id="contentFrame" src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo do Iframe"></iframe>
     <div id="buttonContainer" class="button-container">
@@ -135,7 +135,7 @@
         <button class="tigers-btn" onclick="changeIframe('https://app.tigersclub.vip/pr/k58hQ1An', '#FF6200')">Tigers Club</button>
         <a class="suporte-btn" href="https://wa.me/5583994121109" target="_blank" onclick="changeContainerColor('#25D366')">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path fill="white" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.134.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-.719-.911-.99-.242-.271-.416-.471-.642-.471H7.5c-.223 0-.47.074-.669.223-.297.223-1.115.891-1.115 2.176 0 1.285.966 2.529 1.1 2.678.133.148 1.874 2.863 4.55 4.014 1.58.682 2.822.892 3.789.892.975 0 1.774-.446 2.23-.743.446-.297.743-.669.892-.967.149-.297.297-.595.223-.744-.074-.148-.322-.223-.595-.297zm-5.487-13c-5.522 0-10 4.477-10 10 0 2.136.671 4.116 1.81 5.74L2 22l5.26-1.794c1.623 1.139 3.604 1.794 5.74 1.794 5.522 0 10-4.477 10-10s-4.478-10-10-10zm0 18c-1.943 0-3.762-.586-5.29-1.597l-.379-.253-3.112 1.06 1.06-3.112-.253-.379c-1.01-1.528-1.597-3.347-1.597-5.29 0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
+                <path fill="white" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.134.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669 hé.719-.911-.99-.242-.271-.416-.471-.642-.471H7.5c-.223 0-.47.074-.669.223-.297.223-1.115.891-1.115 2.176 0 1.285.966 2.529 1.1 2.678.133.148 1.874 2.863 4.55 4.014 1.58.682 2.822.892 3.789.892.975 0 1.774-.446 2.23-.743.446-.297.743-.669.892-.967.149-.297.297-.595.223-.744-.074-.148-.322-.223-.595-.297zm-5.487-13c-5.522 0-10 4.477-10 10 0 2.136.671 4.116 1.81 5.74L2 22l5.26-1.794c1.623 1.139 3.604 1.794 5.74 1.794 5.522 0 10-4.477 10-10s-4.478-10-10-10zm0 18c-1.943 0-3.762-.586-5.29-1.597l-.379-.253-3.112 1.06 1.06-3.112-.253-.379c-1.01-1.528-1.597-3.347-1.597-5.29 0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
             </svg>
             Suporte
         </a>
