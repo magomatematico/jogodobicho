@@ -21,13 +21,15 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Plataforma de Apostas Online - Dama da Sorte</title>
     <style>
-        body {
+        html, body {
             margin: 0;
             padding: 0;
             height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        body {
             display: flex;
             flex-direction: column;
-            font-family: Arial, sans-serif;
         }
         .message-bar {
             display: flex;
@@ -40,6 +42,7 @@
             text-align: center;
             font-size: 14px;
             min-height: 30px;
+            flex-shrink: 0;
         }
         .message-bar a {
             color: #25D366;
@@ -61,6 +64,7 @@
         main {
             flex-grow: 1;
             display: flex;
+            min-height: 0; /* Prevent overflow on small screens */
         }
         iframe {
             width: 100%;
@@ -71,25 +75,27 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 4px;
-            padding: 8px;
+            gap: 8px;
+            padding: 10px;
             background-color: #004085;
-            min-height: 40px;
+            flex-shrink: 0;
+            min-height: 50px;
         }
         footer button, footer a {
-            padding: 6px 10px;
+            padding: 8px 12px;
             color: white;
             border: none;
-            border-radius: 4px;
-            font-size: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             white-space: nowrap;
-            min-width: 80px;
+            min-width: 100px;
         }
         footer button:hover, footer a:hover {
             filter: brightness(85%);
@@ -107,34 +113,34 @@
             background-color: #25D366;
         }
         .whatsapp-icon {
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             fill: white;
         }
         /* Responsive adjustments for smartphones */
         @media (max-width: 600px) {
             .message-bar {
-                font-size: 10px;
-                padding: 5px;
+                font-size: 12px;
+                padding: 6px;
                 min-height: 25px;
             }
             .close-btn {
-                font-size: 12px;
-                right: 5px;
+                font-size: 14px;
+                right: 6px;
             }
             footer {
-                gap: 3px;
-                padding: 5px;
-                min-height: 35px;
+                gap: 6px;
+                padding: 8px;
+                min-height: 45px;
             }
             footer button, footer a {
-                padding: 4px 6px;
-                font-size: 9px;
-                min-width: 60px;
+                padding: 6px 8px;
+                font-size: 12px;
+                min-width: 80px;
             }
             .whatsapp-icon {
-                width: 10px;
-                height: 10px;
+                width: 16px;
+                height: 16px;
             }
         }
     </style>
@@ -142,7 +148,7 @@
 <body>
     <div id="messageBar" class="message-bar">
         <span>Torne-se um promotor clicando <a href="https://www.damadasorte.com.br" target="_blank" aria-label="Torne-se um promotor com Dama da Sorte">aqui</a></span>
-        <button class="close-btn" aria-label="Fechar mensagem" onclick="document.getElementById('messageBar').style.display='none'; document.querySelector('main').style.height='calc(100% - 40px)'">×</button>
+        <button class="close-btn" aria-label="Fechar mensagem" onclick="document.getElementById('messageBar').style.display='none'; document.querySelector('main').style.height='calc(100% - 50px)'">×</button>
     </div>
     <main>
         <iframe id="contentFrame" src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo da Plataforma de Apostas" alt="Plataforma de apostas online"></iframe>
