@@ -44,17 +44,19 @@
         }
         iframe {
             width: 100%;
-            height: calc(100% - 100px); /* Adjusted for message bar and button container */
+            height: calc(100% - 100px);
             border: none;
             flex-grow: 1;
         }
         .button-container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Allow buttons to wrap on small screens */
             gap: 10px;
             padding: 10px;
             background-color: #004085;
             transition: background-color 0.3s ease;
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
         }
         .button-container button, .button-container a {
             padding: 8px 16px;
@@ -69,6 +71,7 @@
             align-items: center;
             gap: 6px;
             transition: filter 0.2s;
+            white-space: nowrap; /* Prevent button text from wrapping */
         }
         .button-container button:hover, .button-container a:hover {
             filter: brightness(85%);
@@ -93,27 +96,29 @@
         /* Responsive adjustments for smartphones */
         @media (max-width: 600px) {
             .message-bar {
-                font-size: 14px;
-                padding: 8px;
+                font-size: 12px;
+                padding: 6px;
             }
             .close-btn {
-                font-size: 16px;
-                right: 8px;
+                font-size: 14px;
+                right: 6px;
             }
             .button-container {
-                gap: 8px;
-                padding: 8px;
+                gap: 6px;
+                padding: 6px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
             }
             .button-container button, .button-container a {
-                padding: 6px 12px;
-                font-size: 12px;
+                padding: 5px 10px;
+                font-size: 11px;
             }
             .whatsapp-icon {
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 14px;
             }
             iframe {
-                height: calc(100% - 90px);
+                height: calc(100% - 80px); /* Adjusted for smaller message bar and button container */
             }
         }
     </style>
