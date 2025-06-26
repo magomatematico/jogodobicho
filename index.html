@@ -64,7 +64,7 @@
         main {
             flex-grow: 1;
             display: flex;
-            min-height: 0; /* Prevent overflow on small screens */
+            min-height: 0;
         }
         iframe {
             width: 100%;
@@ -128,10 +128,18 @@
                 font-size: 14px;
                 right: 6px;
             }
+            main {
+                padding-bottom: 60px; /* Space for fixed footer */
+            }
             footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
                 gap: 6px;
                 padding: 8px;
-                min-height: 45px;
+                min-height: 50px;
+                z-index: 1000;
             }
             footer button, footer a {
                 padding: 6px 8px;
@@ -148,7 +156,7 @@
 <body>
     <div id="messageBar" class="message-bar">
         <span>Torne-se um promotor clicando <a href="https://www.damadasorte.com.br" target="_blank" aria-label="Torne-se um promotor com Dama da Sorte">aqui</a></span>
-        <button class="close-btn" aria-label="Fechar mensagem" onclick="document.getElementById('messageBar').style.display='none'; document.querySelector('main').style.height='calc(100% - 50px)'">×</button>
+        <button class="close-btn" aria-label="Fechar mensagem" onclick="document.getElementById('messageBar').style.display='none'; document.querySelector('main').style.paddingTop='0';">×</button>
     </div>
     <main>
         <iframe id="contentFrame" src="https://app.acertos.club/pr/T5Sf26JH" title="Conteúdo da Plataforma de Apostas" alt="Plataforma de apostas online"></iframe>
